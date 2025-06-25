@@ -1,0 +1,111 @@
+/* Global Styles */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Button Hover Effects */
+.button:hover {
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
+/* ComboBox Styles */
+.combo-box {
+    -fx-font-size: 12px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #a5d6a7;
+    -fx-text-fill: #2e7d32;
+}
+
+.combo-box .list-cell:filled:selected {
+    -fx-background-color: #66bb6a;
+    -fx-text-fill: white;
+}
+
+/* ListView Styles */
+.list-view {
+    -fx-font-size: 12px;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2e7d32;
+    -fx-padding: 8px;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #66bb6a;
+    -fx-text-fill: white;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #81c784;
+    -fx-text-fill: white;
+}
+
+/* DatePicker Styles */
+.date-picker {
+    -fx-font-size: 12px;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Chart Styles */
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-title {
+    -fx-text-fill: #2e7d32;
+    -fx-font-weight: bold;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+/* TextField and PasswordField Styles */
+.text-field,
+.password-field {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2e7d32;
+    -fx-prompt-text-fill: #66bb6a;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #4caf50;
+    -fx-border-width: 2px;
+}
+
+/* Label Styles */
+.label {
+    -fx-text-fill: #2e7d32;
+}
+
+/* ScrollPane Styles */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: #a5d6a7;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #66bb6a;
+    -fx-background-radius: 5px;
+}
+
+#duit{
+   -fx-font-size: 24px;
+}
