@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pbo.transaksikeuangan.LaporanPengeluaranController">
+    <center>
+        <VBox prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E8F5E8;">
+            <children>
+                <HBox alignment="CENTER" spacing="0.0" style="-fx-background-color: #C8E6C9; -fx-padding: 10;">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #66BB6A; -fx-background-radius: 20 0 0 20; -fx-text-fill: white; -fx-font-weight: bold;" text="Pengeluaran" />
+                        <Button mnemonicParsing="false" onAction="#switchToPemasukanAnalisis" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 0 20 20 0; -fx-text-fill: #2E7D32; -fx-font-weight: bold;" text="Pemasukan" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #C8E6C9; -fx-padding: 15;">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label prefHeight="17.0" prefWidth="82.0" style="-fx-font-weight: bold;" text="Periode:" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0" />
+                          <DatePicker fx:id="tanggalMulai" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 8;" />
+                        <Label prefHeight="17.0" prefWidth="46.0" style="-fx-font-weight: bold;" text="s/d" />
+                          <DatePicker fx:id="tanggalAkhir" prefWidth="120.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 8;" />
+                        <Label prefHeight="17.0" prefWidth="67.0" style="-fx-font-weight: bold;" text="Filter:" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="periodeCombo" prefWidth="120.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 8;" />
+                        <Button fx:id="filterButton" onAction="#handleFilter" prefHeight="33.0" prefWidth="144.0" style="-fx-background-color: #2E7D32; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-padding: 8 15;" text="Terapkan Filter" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: #C8E6C9; -fx-padding: 10;">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label style="-fx-font-weight: bold;" text="Total pengeluaran" />
+                                <Label fx:id="totalPengeluaranLabel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #D32F2F;" text="Rp 0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <VBox spacing="10.0" style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 10; -fx-padding: 20;" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Pie chart untuk pengeluaran" />
+                                <PieChart fx:id="pieChartPengeluaran" prefHeight="250.0" prefWidth="400.0" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="10.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 10; -fx-padding: 20;">
+                            <children>
+                                <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Persentase kategori pengeluaran" />
+                                <Label fx:id="detailLabel" style="-fx-background-color: #C8E6C9; -fx-background-radius: 8; -fx-padding: 10;" text="Arahkan kursor ke chart untuk melihat detail" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="60.0" spacing="0.0" style="-fx-background-color: #A5D6A7;">
+            <children>
+                <Button mnemonicParsing="false" onAction="#kembaliKeMenu" prefHeight="60.0" prefWidth="266.0" style="-fx-background-color: transparent; -fx-text-fill: #2E7D32; -fx-font-weight: bold;" text="📊 Transaksi" />
+                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="266.0" style="-fx-background-color: #66BB6A; -fx-text-fill: white; -fx-font-weight: bold;" text="📈 Analisis" />
+                <Button mnemonicParsing="false" onAction="#switchToPengaturan" prefHeight="60.0" prefWidth="266.0" style="-fx-background-color: transparent; -fx-text-fill: #2E7D32; -fx-font-weight: bold;" text="⚙ Pengaturan" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
