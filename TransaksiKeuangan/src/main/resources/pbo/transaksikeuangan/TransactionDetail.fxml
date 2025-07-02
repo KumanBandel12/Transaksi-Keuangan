@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="15.0" style="-fx-background-color: white; -fx-border-color: #BDBDBD; -fx-border-radius: 5; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pbo.transaksikeuangan.TransactionDetailController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+    </padding>
+    <children>
+        <HBox alignment="CENTER_LEFT">
+            <children>
+                <Button mnemonicParsing="false" onAction="#closePopup" style="-fx-background-color: transparent; -fx-font-size: 16px;" text="X" />
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
+                        <Button mnemonicParsing="false" onAction="#handleDelete" style="-fx-background-color: #E57373;" text="Hapus" textFill="white">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+        <VBox alignment="CENTER" spacing="8.0">
+            <children>
+                <Label text="Detail Transaksi">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="tanggalLabel" text="Tanggal: 01 Januari 2025" />
+                <Label fx:id="jenisLabel" style="-fx-font-weight: bold;" text="Jenis: Pemasukan" />
+                <Label fx:id="kategoriLabel" text="Kategori: Gaji" />
+                <Label fx:id="jumlahLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Jumlah: Rp1,000,000" />
+            </children>
+        </VBox>
+    </children>
+</VBox>

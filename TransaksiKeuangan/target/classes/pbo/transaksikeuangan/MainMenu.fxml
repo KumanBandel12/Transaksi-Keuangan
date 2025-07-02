@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pbo.transaksikeuangan.MenuController">
+   <children>
+      <BorderPane>
+         <center>
+            <VBox prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E8F5E8;">
+               <children>
+                  <VBox spacing="10.0" style="-fx-background-color: #C8E6C9; -fx-padding: 20;">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Main Menu" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#showCalendar" prefHeight="40.0" prefWidth="150.0" text="Kalender" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Jumlah Saldo" />
+                                    <Label fx:id="jumlahSaldoLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2E7D32;" text="Rp 0" />
+                                 </children>
+                              </VBox>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <VBox alignment="TOP_RIGHT" spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-size: 12px;" text="Tanggal Aktif:" />
+                                    <Label fx:id="tanggalLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="01/01/2024" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox spacing="20.0">
+                           <children>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label style="-fx-font-size: 12px;" text="Total Pemasukan (Bulan)" />
+                                    <Label fx:id="saldoPemasukanLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #388E3C;" text="Rp 0" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label style="-fx-font-size: 12px;" text="Total Pengeluaran (Bulan)" />
+                                    <Label fx:id="saldoPengeluaranLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #D32F2F;" text="Rp 0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <VBox style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 0 0 10 0;" text="History" />
+
+                        <HBox spacing="20.0" style="-fx-padding: 0 0 10 0;">
+                           <children>
+                              <Label text="Pemasukan Hari Ini:" />
+                              <Label fx:id="dailyPemasukanLabel" style="-fx-font-weight: bold; -fx-text-fill: #388E3C;" text="Rp 0" />
+                              <Label text="Pengeluaran Hari Ini:" />
+                              <Label fx:id="dailyPengeluaranLabel" style="-fx-font-weight: bold; -fx-text-fill: #D32F2F;" text="Rp 0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                           <children>
+                              <Label text="Saring berdasarkan tanggal:" />
+                              <DatePicker fx:id="historyDatePicker" />
+                              <Button onAction="#resetHistoryFilter" text="Tampilkan Hari Ini" />
+                           </children>
+                        </HBox>
+                        <ListView fx:id="historyList" prefHeight="200.0" style="-fx-background-color: #A5D6A7; -fx-background-radius: 10;" VBox.vgrow="ALWAYS" />
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <children>
+                              <Button onAction="#showTransaksi" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-size: 24px;" text="+" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="60.0" spacing="0.0" style="-fx-background-color: #A5D6A7;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showTransaksi" prefHeight="60.0" prefWidth="266.0" style="-fx-background-color: #66BB6A; -fx-text-fill: white; -fx-font-weight: bold;" text="📊 Transaksi" />
+                  <Button mnemonicParsing="false" onAction="#showAnalisis" prefHeight="60.0" prefWidth="266.0" style="-fx-background-color: transparent; -fx-text-fill: #2E7D32; -fx-font-weight: bold;" text="📈 Analisis" />
+                  <Button mnemonicParsing="false" onAction="#showPengaturan" prefHeight="60.0" prefWidth="266.0" style="-fx-background-color: transparent; -fx-text-fill: #2E7D32; -fx-font-weight: bold;" text="⚙ Pengaturan" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+      <ProgressIndicator fx:id="loadingIndicator" prefHeight="80.0" prefWidth="80.0" visible="false" />
+   </children>
+</StackPane>
